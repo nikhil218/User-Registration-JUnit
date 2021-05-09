@@ -58,4 +58,16 @@ userRegistration user;
         boolean result = user.Number("8888997700");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void give_Password_True_Test() {
+        boolean result = user.Password("nikhil_c123");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void name() {
+        boolean result = user.Password("nik123");
+        Assert.assertFalse(result);
+    }
 }
