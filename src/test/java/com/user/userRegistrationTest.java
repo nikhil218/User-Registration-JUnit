@@ -13,13 +13,25 @@ userRegistration user;
 
     @Test
     public void give_FirstName_True_test() {
-        boolean result = user.FirstName("Surendra");
+        boolean result = user.FirstName("Nikhil");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void give_FirstName_Flase_Test() {
-        boolean result = user.FirstName("surendra");
+    public void give_FirstName_False_Test() {
+        boolean result = user.FirstName("nikhil");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void give_LastName_True_Test() {
+        boolean result = user.LastName("Tirpude");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void give_LastName_False_Test() {
+        boolean result = user.LastName("tirpude");
         Assert.assertFalse(result);
     }
 }
