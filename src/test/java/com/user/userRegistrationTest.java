@@ -34,4 +34,16 @@ userRegistration user;
         boolean result = user.LastName("tirpude");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void give_email_True_Test() {
+        boolean result = user.email("nik.tir3@gmail.com");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void give_email_False_Test() {
+        boolean result = user.email("tirpude");
+        Assert.assertFalse(result);
+    }
 }
