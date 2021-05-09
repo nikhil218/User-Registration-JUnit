@@ -46,4 +46,16 @@ userRegistration user;
         boolean result = user.email("tirpude");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void give_number_True_Test() {
+        boolean result = user.Number("91 8887779999");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void give_number_False_Test() {
+        boolean result = user.Number("8888997700");
+        Assert.assertFalse(result);
+    }
 }
