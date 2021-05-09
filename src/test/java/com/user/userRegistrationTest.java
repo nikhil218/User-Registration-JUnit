@@ -4,11 +4,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class urt {
+public class userRegistrationTest {
 
-ur user;
+userRegistration user;
     @Before public void initialize() {
-        user = new ur();
+        user = new userRegistration();
     }
 
     @Test

@@ -2,7 +2,7 @@ package com.user;
 
 import java.util.regex.Pattern;
 
-public class ur {
+public class userRegistration {
     public boolean result;
     private static final String patternForFirstName = "[A-Z]{1}[a-z]{2,}";
 
