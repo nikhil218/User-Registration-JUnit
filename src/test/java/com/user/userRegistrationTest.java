@@ -61,7 +61,7 @@ userRegistration user;
 
     @Test
     public void give_Password_True_Test() {
-        boolean result = user.Password("nikhil_c123");
+        boolean result = user.Password("Nikhil_c123");
         Assert.assertTrue(result);
     }
 
