@@ -9,28 +9,32 @@ public class userRegistration {
     private static final String patternForNumber = "^[0-9]{2}[ ][0-9]{10}$";
     private static final String patternForPassword = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[-+_!@#$%^&*., ?]).{8,}$";
 
-    public boolean FirstName(String FirstName) {
-        result = Pattern.compile(patternForName).matcher(FirstName).matches();
-        return result;
+    public boolean firstName(String FirstName) throws userRegistrationException {
+        if(!Pattern.compile(patternForName).matcher(FirstName).matches());
+            throw new userRegistrationException("Invalid Frst name");
     }
 
-    public boolean LastName(String LastName) {
-        result = Pattern.compile(patternForName).matcher(LastName).matches();
-        return result;
+    public boolean lastName(String LastName) throws userRegistrationException{
+        if(!Pattern.compile(patternForName).matcher(LastName).matches());
+            throw new userRegistrationException("Invalid Last name");
     }
 
-    public boolean email( String email) {
+    public boolean email( String email) throws userRegistrationException{
+        if(!Pattern.compile(patternForEmail).matcher(email).matches());
+            throw new userRegistrationException("Invalid Email");
+    }
+
+    public boolean phoneNumber(String Number) throws userRegistrationException{
+        if(!Pattern.compile(patternForNumber).matcher(Number).matches());
+            throw new userRegistrationException("Invalid Phone number");
+    }
+
+    public boolean password(String Password) throws userRegistrationException{
+        if(!Pattern.compile(patternForPassword).matcher(Password).matches());
+            throw new userRegistrationException("Invalid Password");
+    }
+    public boolean checkEmail(String email){
         result = Pattern.compile(patternForEmail).matcher(email).matches();
-        return result;
-    }
-
-    public boolean Number(String Number) {
-        result = Pattern.compile(patternForNumber).matcher(Number).matches();
-        return result;
-    }
-
-    public boolean Password(String Password) {
-        result = Pattern.compile(patternForPassword).matcher(Password).matches();
         return result;
     }
 }

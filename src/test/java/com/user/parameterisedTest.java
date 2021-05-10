@@ -10,15 +10,12 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-
 public class parameterisedTest {
     private String email;
-    private final boolean expectedResult;
     userRegistration user;
 
-    public parameterisedTest(String email, boolean expectedResult) {
+    public parameterisedTest(String email) {
         this.email = email;
-        this.expectedResult = expectedResult;
     }
 
     @Before
@@ -28,34 +25,11 @@ public class parameterisedTest {
 
     @Parameterized.Parameters
     public static Collection input() {
-        return Arrays.asList(new Object[][] { {"abc@yahoo.com",true},
-                {"abc-100@yahoo.com",true},
-                {"abc.100@yahoo.com",true},
-                {"abc111@abc.com",true},
-                {"abc-100@abc.net",true},
-                {"abc.100@abc.com.au",true},
-                {"abc@1.com",true},
-                {"abc@gmail.com.com",true},
-                {"abc+100@gmail.com",true},
-                {"abc",false},
-                {"abc@.com.my",false},
-                {"abc123@gmail.a",false},
-                {"abc123@.com",false},
-                {"abc123@.com.com",false},
-                {".abc@abc.com",false},
-                {"abc()*@gmail.com",false},
-                {"abc@%*.com",false},
-                {"abc..2002@gmail.com",false},
-                {"abc.@gmail.com",false},
-                {"abc@abc@gmail.com",false},
-                {"abc@gmail.com.1a",false},
-                {"abc@gmail.com.aa.au",false} });
+        return Arrays.asList(new Object[]{"abc@yahoo.com", "abc-100@yahoo.com,", "abc.100@yahoo.com", "abc111@abc.com,", "abc-100@abc.net,", "abc.100@abc.com.au", "abc@1.com,", "abc@gmail.com.com", "abc+100@gmail.com"});
     }
 
     @Test
-    public void givenEmailAsVariable_ShouldReturnAsPerParameterizedResults() {
-        boolean result = user.email(this.email);
-        Assert.assertEquals(this.expectedResult, result);
+    public void givenEmail_CheckFalse() {
+        user.checkEmail(email);
     }
 }
-
