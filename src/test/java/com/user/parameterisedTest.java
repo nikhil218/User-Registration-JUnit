@@ -28,8 +28,4 @@ public class parameterisedTest {
         return Arrays.asList(new Object[]{"abc@yahoo.com", "abc-100@yahoo.com,", "abc.100@yahoo.com", "abc111@abc.com,", "abc-100@abc.net,", "abc.100@abc.com.au", "abc@1.com,", "abc@gmail.com.com", "abc+100@gmail.com"});
     }
 
-    @Test
-    public void givenEmail_CheckFalse() {
-        user.checkEmail(email);
-    }
 }
